@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Thin.otf') format('opentype');font-weight:200;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-SemiBold.otf') format('opentype');font-weight:600;font-display:swap}
+:root{--ink:#1b2b22;--forest:#22362b;--forest2:#2d4437;--forest3:#3a5546;--cream:#edede2;--cream2:#f6f6ee;--lime:#cbf24c;--limeD:#b3d93a;--grass:#3f9b52;--sage:#dcebba}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream2);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:350;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden}
+a{color:var(--grass);text-decoration:none}
+a:hover{color:var(--ink)}
+input,textarea,button,select{font:inherit;color:inherit}
+</style>
+<script src="sk-data.js"></script>
+<script src="sk-motion.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip">
+<dc-import name="SK Nav" hint-size="100%,1px"></dc-import>
+
+<section style="position:relative;min-height:min(100vh,900px);display:flex;align-items:flex-end;overflow:hidden;background:var(--forest)">
+  <div style="position:absolute;inset:0;overflow:hidden"><img data-zoom="1" src="{{ svc.hero }}" alt="{{ svc.heroAlt }}" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,43,34,.6) 0%,rgba(27,43,34,0) 18%,rgba(27,43,34,.28) 34%,rgba(27,43,34,.72) 58%,rgba(27,43,34,.96) 100%)"></div>
+  <div style="position:relative;width:100%;display:flex;flex-direction:column;gap:24px;padding:140px clamp(16px,4vw,56px) clamp(40px,6vh,72px)">
+    <div data-reveal="up" style="display:flex;align-items:center;gap:10px;font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:16px;color:var(--cream)">
+      <a href="SK%20Energy%20Landing.dc.html#services" style="color:var(--lime)" style-hover="color:#fff">Services</a><span style="color:rgba(237,237,226,.5)">/</span><span>{{ svc.nav }}</span>
+    </div>
+    <h1 data-reveal="up" data-delay="80" style="margin:0;max-width:16ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(42px,7.4vw,118px);line-height:.94;letter-spacing:-.035em;color:var(--lime)">{{ svc.title }}</h1>
+    <div data-reveal="up" data-delay="160" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px">
+      <p style="margin:0;max-width:48ch;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:rgba(237,237,226,.92)">{{ svc.standfirst }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="Contact.dc.html" style="padding:15px 24px;border-radius:999px;background:var(--lime);color:var(--forest);font-family:'Area Inktrap','Outfit',sans-serif;font-size:15.5px;font-weight:500" style-hover="background:#dcf77f;color:var(--forest)">Book a consultation</a>
+        <a href="#process" style="padding:15px 24px;border-radius:999px;border:1px solid rgba(237,237,226,.4);color:var(--cream);font-family:'Area Inktrap','Outfit',sans-serif;font-size:15.5px" style-hover="border-color:var(--lime);color:var(--lime)">How it works</a>
+      </div>
+    </div>
+    <div data-reveal="up" data-delay="220" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,2.4vw,34px);align-self:flex-start;padding:12px 22px;border-radius:14px;background:rgba(27,43,34,.6);backdrop-filter:blur(6px)">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(203,242,76,.85)">Accredited by</span>
+      <img src="images/acc-mcs.png" alt="MCS certified" style="height:17px;width:auto;display:block" />
+      <img src="images/acc-trustmark.png" alt="TrustMark" style="height:23px;width:auto;display:block" />
+      <img src="images/acc-trustpilot.png" alt="Trustpilot" style="height:20px;width:auto;display:block" />
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream2);padding:clamp(70px,10vw,140px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;gap:clamp(30px,5vw,80px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:end">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--forest)">{{ svc.kicker }}</span>
+      <p data-reveal="up" data-delay="80" style="margin:0;max-width:30ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(24px,2.8vw,40px);line-height:1.18;letter-spacing:-.02em;color:var(--forest)">{{ svc.intro }}</p>
+    </div>
+    <div data-reveal="scale" data-delay="140" style="display:flex;flex-direction:column;gap:10px;padding:clamp(24px,3vw,40px);border-radius:18px;background:var(--forest)">
+      <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:200;font-size:clamp(60px,8vw,124px);line-height:.9;letter-spacing:-.05em;color:var(--lime)">{{ svc.stat.v }}</span>
+      <span style="max-width:26ch;font-size:16px;line-height:1.5;color:rgba(237,237,226,.8)">{{ svc.stat.l }}</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream);padding:clamp(70px,10vw,140px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(30px,4vw,56px)">
+    <h2 data-reveal="up" style="margin:0;max-width:18ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--forest)">{{ svc.benefitsTitle }}</h2>
+    <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))">
+      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="3">
+        <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px;min-height:240px;padding:28px;border-radius:16px;background:{{ b.bg }};color:{{ b.fg }}">
+          <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:46px;line-height:1;color:{{ b.ac }}">{{ b.num }}</span>
+          <h3 style="margin:auto 0 0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.02em;color:{{ b.fg }}">{{ b.t }}</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:{{ b.fg }};opacity:.82">{{ b.x }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--forest);overflow:hidden">
+  <div style="display:flex;flex-wrap:wrap;min-height:min(90vh,820px)">
+    <div style="position:relative;flex:1 1 min(100%,520px);min-height:380px;overflow:hidden">
+      <div data-par="0.22" style="position:absolute;inset:-12% 0"><img src="{{ svc.feature.img }}" alt="{{ svc.feature.alt }}" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+    </div>
+    <div style="flex:1 1 min(100%,460px);display:flex;flex-direction:column;justify-content:center;gap:22px;padding:clamp(40px,6vw,96px) clamp(16px,4vw,72px)">
+      <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--lime)">{{ svc.feature.kicker }}</span>
+      <h2 data-reveal="up" data-delay="80" style="margin:0;max-width:14ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--cream)">{{ svc.feature.title }}</h2>
+      <p data-reveal="up" data-delay="140" style="margin:0;max-width:42ch;font-size:17px;line-height:1.65;color:rgba(237,237,226,.8)">{{ svc.feature.text }}</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream2);padding:clamp(70px,10vw,140px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(30px,4vw,56px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:18px">
+      <h2 data-reveal="up" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--forest)">Where it fits</h2>
+      <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:16px;color:var(--forest)">Homes, businesses and developments</span>
+    </div>
+    <div style="display:grid;gap:clamp(20px,3vw,40px);grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))">
+      <sc-for list="{{ svc.fits }}" as="a" hint-placeholder-count="3">
+        <div data-reveal="up" style="display:flex;flex-direction:column;gap:12px;padding-top:22px;border-top:2px solid var(--forest)">
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:23px;letter-spacing:-.015em;color:var(--forest)">{{ a.t }}</h3>
+          <p style="margin:0;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">{{ a.x }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="background:var(--sage);padding:clamp(70px,10vw,140px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(34px,5vw,64px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px">
+      <h2 data-reveal="up" style="margin:0;max-width:16ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--forest)">How a job runs, start to switch-on</h2>
+      <a data-reveal="up" href="Contact.dc.html" style="padding:14px 24px;border-radius:999px;background:var(--forest);color:var(--lime);font-family:'Area Inktrap','Outfit',sans-serif;font-size:15px" style-hover="background:var(--forest2);color:var(--lime)">Start your project →</a>
+    </div>
+    <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+        <div data-reveal="up" style="display:flex;flex-direction:column;gap:12px;padding:26px;border-radius:16px;background:var(--cream2)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Step {{ s.num }}</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.015em;color:var(--forest)">{{ s.t }}</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:rgba(27,43,34,.72)">{{ s.x }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream2);padding:clamp(70px,10vw,130px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(26px,4vw,46px)">
+    <h2 data-reveal="up" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.03em;color:var(--forest)">Other services</h2>
+    <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))">
+      <sc-for list="{{ others }}" as="o" hint-placeholder-count="5">
+        <a data-reveal="up" href="{{ o.href }}" style="display:flex;flex-direction:column;gap:14px;color:var(--forest)" style-hover="color:var(--grass)">
+          <div style="aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--forest3)"><img src="{{ o.hero }}" alt="{{ o.heroAlt }}" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <span style="display:flex;justify-content:space-between;gap:10px;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:18px">{{ o.nav }}<span>→</span></span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--lime);padding:clamp(60px,8vw,110px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px">
+    <h2 data-reveal="up" style="margin:0;max-width:18ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.6vw,66px);line-height:1;letter-spacing:-.035em;color:var(--forest)">Thinking about the right next step for your property?</h2>
+    <a data-reveal="up" href="Contact.dc.html" style="padding:16px 26px;border-radius:999px;background:var(--forest);color:var(--lime);font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500" style-hover="background:var(--ink);color:var(--lime)">Talk to our team →</a>
+  </div>
+</section>
+
+<dc-import name="SK Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;slug&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;solar-pv&quot;,&quot;battery-storage&quot;,&quot;heat-pumps&quot;,&quot;ev-chargers&quot;,&quot;underfloor-heating&quot;],&quot;default&quot;:&quot;solar-pv&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Preview&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Full&quot;,&quot;Subtle&quot;,&quot;Off&quot;],&quot;default&quot;:&quot;Full&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { d: window.SK_DATA || null };
+  componentDidMount() {
+    const go = () => {
+      if (window.SK_DATA && window.SKMotion) {
+        if (!this.state.d) this.setState({ d: window.SK_DATA });
+        if (!this._off) this._off = window.SKMotion.init({ amt: this.props.motion === 'Subtle' ? 0.45 : this.props.motion === 'Off' ? 0 : 1 });
+      } else setTimeout(go, 40);
+    };
+    go();
+  }
+  componentDidUpdate(pp) { if (pp.slug !== this.props.slug) window.scrollTo(0, 0); }
+  componentWillUnmount() { this._off && this._off(); }
+  renderVals() {
+    const d = this.state.d;
+    const q = new URLSearchParams(location.search).get('slug');
+    const slug = q || this.props.slug || 'solar-pv';
+    const list = d ? d.services : [];
+    const svc = list.find(s => s.slug === slug) || list[0] || { stat: {}, feature: {}, fits: [] };
+    const tones0 = 0; const tones = [
+      { bg: 'var(--lime)', fg: 'var(--forest)', ac: 'var(--forest)' },
+      { bg: 'var(--forest)', fg: 'var(--cream)', ac: 'var(--lime)' },
+      { bg: 'var(--cream2)', fg: 'var(--forest)', ac: 'var(--grass)' }
+    ];
+    return {
+      svc,
+      benefits: (svc.benefits || []).map((b, i) => ({ ...b, num: '0' + (i + 1), ...tones[i % 3] })),
+      others: list.filter(s => s.slug !== svc.slug),
+      steps: [
+        { num: '01', t: 'Book a consultation', x: 'Tell us about your property, energy use and priorities. No obligation.' },
+        { num: '02', t: 'Bespoke system design', x: 'A considered design balancing performance, aesthetics and budget.' },
+        { num: '03', t: 'Professional installation', x: 'Our accredited team installs with careful workmanship and minimal disruption.' },
+        { num: '04', t: 'Energy independence', x: 'We help you read your system and stay on hand for aftercare.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

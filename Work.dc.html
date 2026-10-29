@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Thin.otf') format('opentype');font-weight:200;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-SemiBold.otf') format('opentype');font-weight:600;font-display:swap}
+:root{--ink:#1b2b22;--forest:#22362b;--forest2:#2d4437;--forest3:#3a5546;--cream:#edede2;--cream2:#f6f6ee;--lime:#cbf24c;--limeD:#b3d93a;--grass:#3f9b52;--sage:#dcebba}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream2);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:350;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden}
+a{color:var(--grass);text-decoration:none}
+a:hover{color:var(--ink)}
+input,textarea,button,select{font:inherit;color:inherit}
+</style>
+<script src="sk-data.js"></script>
+<script src="sk-motion.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip">
+<dc-import name="SK Nav" hint-size="100%,1px"></dc-import>
+
+<section style="background:var(--forest);padding:clamp(130px,18vh,190px) clamp(16px,4vw,56px) clamp(50px,7vw,90px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,4vw,50px)">
+    <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--lime)">Selected work</span>
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:30px">
+      <h1 data-reveal="up" data-delay="80" style="margin:0;max-width:11ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(46px,9vw,148px);line-height:.9;letter-spacing:-.04em;color:var(--cream)">Three jobs, <span style="color:var(--lime)">start to finish</span></h1>
+      <p data-reveal="up" data-delay="160" style="margin:0;max-width:38ch;font-size:17px;line-height:1.6;color:rgba(237,237,226,.8)">A retrofit, a workshop and a 26-plot development. Real budgets, real timescales, and what each system has done since.</p>
+    </div>
+    <div data-reveal="up" data-delay="220" style="display:flex;flex-wrap:wrap;gap:10px">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <button type="button" onClick="{{ f.pick }}" style="min-height:44px;padding:10px 20px;border-radius:999px;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.fg }};font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .3s ease,color .3s ease">{{ f.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream2);padding:clamp(50px,7vw,100px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(50px,8vw,120px)">
+    <sc-for list="{{ items }}" as="c" hint-placeholder-count="3">
+      <article style="display:flex;flex-wrap:wrap;flex-direction:{{ c.dir }};gap:clamp(24px,4vw,64px);align-items:center">
+        <a data-reveal="scale" href="{{ c.href }}" style="position:relative;display:block;flex:1 1 min(100%,560px);aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--forest3)">
+          <img data-zoom="1" src="{{ c.hero }}" alt="{{ c.heroAlt }}" style="width:100%;height:100%;object-fit:cover;display:block" />
+          <span style="position:absolute;left:18px;top:18px;padding:8px 14px;border-radius:999px;background:var(--lime);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)">Case {{ c.n }}</span>
+        </a>
+        <div style="flex:1 1 min(100%,420px);display:flex;flex-direction:column;gap:20px">
+          <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:16px;color:var(--forest)">{{ c.sector }} · {{ c.location }}</span>
+          <h2 data-reveal="up" data-delay="60" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.03em;color:var(--forest)"><a href="{{ c.href }}" style="color:var(--forest)" style-hover="color:var(--grass)">{{ c.title }}</a></h2>
+          <p data-reveal="up" data-delay="100" style="margin:0;max-width:46ch;font-size:16.5px;line-height:1.65;color:rgba(27,43,34,.74)">{{ c.summary }}</p>
+          <div data-reveal="up" data-delay="140" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid rgba(27,43,34,.16);border-bottom:1px solid rgba(27,43,34,.16)">
+            <sc-for list="{{ c.stats }}" as="s" hint-placeholder-count="3">
+              <div style="display:flex;flex-direction:column;gap:4px;padding:16px 12px 16px 0">
+                <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(20px,2.2vw,30px);letter-spacing:-.025em;color:var(--forest)">{{ s.v }}</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.6)">{{ s.l }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div data-reveal="up" data-delay="180" style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ c.systems }}" as="sy" hint-placeholder-count="3">
+              <span style="padding:7px 13px;border-radius:999px;background:var(--sage);font-size:13.5px;color:var(--forest)">{{ sy }}</span>
+            </sc-for>
+          </div>
+          <a data-reveal="up" data-delay="200" href="{{ c.href }}" style="align-self:flex-start;font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500;color:var(--grass)" style-hover="color:var(--forest)">Read the case study →</a>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:var(--sage);padding:clamp(60px,9vw,120px) clamp(16px,4vw,56px)">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:22px">
+    <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:16px;color:var(--forest)">What customers tell us after</span>
+    <blockquote data-reveal="up" data-delay="80" style="margin:0;font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3.6vw,50px);line-height:1.18;letter-spacing:-.01em;color:var(--forest)">“The survey was the first one that told us what not to spend money on. The house has been warmer since.”</blockquote>
+    <span data-reveal="up" data-delay="140" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(27,43,34,.66)">Claire M. · Solar + ASHP retrofit, Dunfermline</span>
+  </div>
+</section>
+
+<section style="background:var(--lime);padding:clamp(60px,8vw,110px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px">
+    <h2 data-reveal="up" style="margin:0;max-width:16ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.6vw,66px);line-height:1;letter-spacing:-.035em;color:var(--forest)">Want numbers like these for your property?</h2>
+    <a data-reveal="up" href="Contact.dc.html" style="padding:16px 26px;border-radius:999px;background:var(--forest);color:var(--lime);font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500" style-hover="background:var(--ink);color:var(--lime)">Start a project →</a>
+  </div>
+</section>
+
+<dc-import name="SK Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { d: window.SK_DATA || null, f: 'All' };
+  componentDidMount() {
+    const go = () => {
+      if (window.SK_DATA && window.SKMotion) {
+        if (!this.state.d) this.setState({ d: window.SK_DATA });
+        if (!this._off) this._off = window.SKMotion.init();
+      } else setTimeout(go, 40);
+    };
+    go();
+  }
+  componentWillUnmount() { this._off && this._off(); }
+  renderVals() {
+    const d = this.state.d;
+    const all = d ? d.cases : [];
+    const labels = ['All', 'Residential', 'Commercial', 'New build'];
+    const match = (c, f) => f === 'All' || c.sector.toLowerCase().indexOf(f.toLowerCase()) === 0;
+    return {
+      filters: labels.map(l => {
+        const on = this.state.f === l;
+        return { label: l, bg: on ? 'var(--lime)' : 'transparent', fg: on ? 'var(--forest)' : 'var(--cream)', bd: on ? 'var(--lime)' : 'rgba(237,237,226,.35)', pick: () => this.setState({ f: l }) };
+      }),
+      items: all.filter(c => match(c, this.state.f)).map((c, i) => ({ ...c, dir: i % 2 ? 'row-reverse' : 'row' }))
+    };
+  }
+}
+</script>
+</body>
+</html>

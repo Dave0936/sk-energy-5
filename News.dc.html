@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Thin.otf') format('opentype');font-weight:200;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-SemiBold.otf') format('opentype');font-weight:600;font-display:swap}
+:root{--ink:#1b2b22;--forest:#22362b;--forest2:#2d4437;--forest3:#3a5546;--cream:#edede2;--cream2:#f6f6ee;--lime:#cbf24c;--limeD:#b3d93a;--grass:#3f9b52;--sage:#dcebba}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream2);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:350;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden}
+a{color:var(--grass);text-decoration:none}
+a:hover{color:var(--ink)}
+input,textarea,button,select{font:inherit;color:inherit}
+</style>
+<script src="sk-data.js"></script>
+<script src="sk-motion.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip">
+<dc-import name="SK Nav" hint-size="100%,1px"></dc-import>
+
+<section style="background:var(--forest);padding:clamp(130px,18vh,190px) clamp(16px,4vw,56px) clamp(40px,6vw,70px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)">
+    <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--lime)">News &amp; insights</span>
+    <h1 data-reveal="up" data-delay="80" style="margin:0;max-width:13ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(44px,8vw,128px);line-height:.92;letter-spacing:-.04em;color:var(--cream)">Straight answers on <span style="color:var(--lime)">home energy</span></h1>
+    <div data-reveal="up" data-delay="160" style="display:flex;flex-wrap:wrap;gap:10px">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+        <button type="button" onClick="{{ f.pick }}" style="min-height:44px;padding:10px 20px;border-radius:999px;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.fg }};font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">{{ f.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream2);padding:clamp(50px,7vw,100px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,6vw,80px)">
+    <sc-if value="{{ hasLead }}" hint-placeholder-val="{{ true }}">
+      <a href="{{ lead.href }}" style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,60px);align-items:center;color:var(--forest)" style-hover="color:var(--grass)">
+        <div data-reveal="scale" style="position:relative;flex:1.4 1 min(100%,560px);aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--forest3)"><img data-zoom="1" src="{{ lead.img }}" alt="{{ lead.alt }}" style="width:100%;height:100%;object-fit:cover;display:block" /><span style="position:absolute;left:18px;top:18px;padding:8px 14px;border-radius:999px;background:var(--lime);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)">Latest</span></div>
+        <div style="flex:1 1 min(100%,380px);display:flex;flex-direction:column;gap:18px">
+          <span data-reveal="up" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">{{ lead.cat }} · {{ lead.read }} min · {{ lead.date }}</span>
+          <h2 data-reveal="up" data-delay="60" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,54px);line-height:1.02;letter-spacing:-.03em">{{ lead.title }}</h2>
+          <p data-reveal="up" data-delay="110" style="margin:0;max-width:44ch;font-size:17px;line-height:1.6;color:rgba(27,43,34,.74)">{{ lead.excerpt }}</p>
+          <span data-reveal="up" data-delay="150" style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500;color:var(--grass)">Read the article →</span>
+        </div>
+      </a>
+    </sc-if>
+    <div style="display:grid;gap:clamp(24px,3vw,36px) 18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))">
+      <sc-for list="{{ rest }}" as="p" hint-placeholder-count="4">
+        <a data-reveal="up" href="{{ p.href }}" style="display:flex;flex-direction:column;gap:14px;color:var(--forest)" style-hover="color:var(--grass)">
+          <div style="aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--forest3)"><img src="{{ p.img }}" alt="{{ p.alt }}" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">{{ p.cat }} · {{ p.read }} min</span>
+          <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(20px,2vw,26px);line-height:1.15;letter-spacing:-.02em">{{ p.title }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+<section style="background:var(--lime);padding:clamp(60px,8vw,110px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px">
+    <h2 data-reveal="up" style="margin:0;max-width:16ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.6vw,66px);line-height:1;letter-spacing:-.035em;color:var(--forest)">Get a straight answer on what your property needs.</h2>
+    <a data-reveal="up" href="Contact.dc.html" style="padding:16px 26px;border-radius:999px;background:var(--forest);color:var(--lime);font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500" style-hover="background:var(--ink);color:var(--lime)">Start a project →</a>
+  </div>
+</section>
+<dc-import name="SK Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { d: window.SK_DATA || null, f: 'All' };
+  componentDidMount() {
+    const go = () => {
+      if (window.SK_DATA && window.SKMotion) {
+        if (!this.state.d) this.setState({ d: window.SK_DATA });
+        if (!this._off) this._off = window.SKMotion.init();
+      } else setTimeout(go, 40);
+    };
+    go();
+  }
+  componentWillUnmount() { this._off && this._off(); }
+  renderVals() {
+    const d = this.state.d;
+    const all = d ? d.posts : [];
+    const cats = ['All'].concat(all.map(p => p.cat).filter((c, i, a) => a.indexOf(c) === i));
+    const list = all.filter(p => this.state.f === 'All' || p.cat === this.state.f);
+    return {
+      filters: cats.map(l => { const on = this.state.f === l; return { label: l, bg: on ? 'var(--lime)' : 'transparent', fg: on ? 'var(--forest)' : 'var(--cream)', bd: on ? 'var(--lime)' : 'rgba(237,237,226,.35)', pick: () => this.setState({ f: l }) }; }),
+      hasLead: list.length > 0, lead: list[0] || {}, rest: list.slice(1)
+    };
+  }
+}
+</script>
+</body>
+</html>

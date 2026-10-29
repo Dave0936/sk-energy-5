@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Thin.otf') format('opentype');font-weight:200;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Light.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-SemiBold.otf') format('opentype');font-weight:600;font-display:swap}
+:root{--ink:#1b2b22;--forest:#22362b;--forest2:#2d4437;--forest3:#3a5546;--cream:#edede2;--cream2:#f6f6ee;--lime:#cbf24c;--limeD:#b3d93a;--grass:#3f9b52;--sage:#dcebba}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream2);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:350;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden}
+a{color:var(--grass);text-decoration:none}
+a:hover{color:var(--ink)}
+input,textarea,button,select{font:inherit;color:inherit}
+</style>
+<script src="sk-data.js"></script>
+<script src="sk-motion.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip">
+<dc-import name="SK Nav" solid="{{ true }}" hint-size="100%,1px"></dc-import>
+
+<section style="background:var(--cream2)">
+  <div style="display:flex;flex-wrap:wrap;min-height:100vh">
+    <div style="position:relative;flex:1 1 min(100%,480px);display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:clamp(130px,18vh,180px) clamp(16px,4vw,64px) clamp(40px,6vw,70px);background:var(--forest);overflow:hidden">
+      <div style="position:absolute;inset:0;opacity:.32"><img src="images/sk/sk-02.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,54,43,.55),rgba(34,54,43,.96) 70%)"></div>
+      <span data-reveal="up" style="position:relative;font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--lime)">Contact</span>
+      <h1 data-reveal="up" data-delay="80" style="position:relative;margin:0;max-width:11ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(44px,6.6vw,104px);line-height:.92;letter-spacing:-.04em;color:var(--lime)">Start with a conversation</h1>
+      <p data-reveal="up" data-delay="140" style="position:relative;margin:0;max-width:40ch;font-size:17px;line-height:1.6;color:rgba(237,237,226,.86)">Send us your postcode and we will come back with the options worth surveying — or tell you if now is not the time.</p>
+      <div data-reveal="up" data-delay="200" style="position:relative;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));padding-top:24px;border-top:1px solid rgba(203,242,76,.22)">
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Call</span><a href="tel:01383257022" style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:22px;color:var(--cream)" style-hover="color:var(--lime)">01383 257022</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Email</span><a href="mailto:customerservice@sk-energy.co.uk" style="font-size:15.5px;color:var(--cream);word-break:break-word" style-hover="color:var(--lime)">customerservice@sk-energy.co.uk</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Fife office</span><span style="font-size:14.5px;line-height:1.55;color:rgba(237,237,226,.78)">Suite 2, Abtel Building, Pitreavie Business Park, Pitreavie Drive, Dunfermline, KY11 8US</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">York office</span><span style="font-size:14.5px;line-height:1.55;color:rgba(237,237,226,.78)">Tower Court Business Centre, Oakdale Road, Clifton Moor, York, YO30 4XL</span></div>
+      </div>
+    </div>
+    <div style="flex:1 1 min(100%,480px);display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,10vh,140px) clamp(16px,4vw,64px) clamp(40px,6vw,70px)">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div data-reveal="scale" style="display:flex;flex-direction:column;gap:18px;max-width:520px">
+          <span style="display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--lime);font-family:'Area Inktrap','Outfit',sans-serif;font-size:24px;color:var(--forest)">✓</span>
+          <h2 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-.03em;color:var(--forest)">Thanks — we will be in touch within one working day.</h2>
+          <button type="button" onClick="{{ reset }}" style="align-self:flex-start;min-height:44px;padding:10px 20px;border-radius:999px;border:1px solid var(--forest);background:transparent;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);cursor:pointer">Send another</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:16px;max-width:560px;width:100%">
+          <h2 data-reveal="up" style="margin:0 0 6px;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.02em;color:var(--forest)">Tell us about your property</h2>
+          <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">
+          <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)">Name
+            <input type="text" placeholder="Your name" style="min-height:50px;padding:13px 16px;border-radius:10px;border:1px solid rgba(27,43,34,.22);background:#fff;font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none;color:var(--ink)" />
+          </label>
+          <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)">Postcode
+            <input type="text" placeholder="KY11 8US" style="min-height:50px;padding:13px 16px;border-radius:10px;border:1px solid rgba(27,43,34,.22);background:#fff;font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none;color:var(--ink)" />
+          </label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)">Email
+            <input type="email" placeholder="you@example.com" style="min-height:50px;padding:13px 16px;border-radius:10px;border:1px solid rgba(27,43,34,.22);background:#fff;font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none;color:var(--ink)" />
+          </label>
+          <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)">Phone (optional)
+            <input type="tel" placeholder="01383 257022" style="min-height:50px;padding:13px 16px;border-radius:10px;border:1px solid rgba(27,43,34,.22);background:#fff;font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none;color:var(--ink)" />
+          </label>
+          <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)">Interested in</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ chips }}" as="c" hint-placeholder-count="5">
+                <button type="button" onClick="{{ c.toggle }}" style="min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:var(--forest);font-size:14.5px;cursor:pointer;transition:background .25s ease">{{ c.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)">Message
+            <textarea rows="4" placeholder="Property type, rough timescale, anything else" style="padding:13px 16px;border-radius:10px;border:1px solid rgba(27,43,34,.22);background:#fff;font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none;color:var(--ink);resize:vertical"></textarea>
+          </label>
+          <button type="submit" style="margin-top:6px;min-height:52px;padding:16px 24px;border:none;border-radius:999px;background:var(--forest);color:var(--lime);font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500;cursor:pointer" style-hover="background:var(--ink)">Book a free consultation</button>
+          <span style="font-size:13.5px;color:rgba(27,43,34,.6)">No obligation. We reply within one working day.</span>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+<dc-import name="SK Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false, picked: [] };
+  componentDidMount() {
+    const go = () => { if (window.SKMotion) { if (!this._off) this._off = window.SKMotion.init(); } else setTimeout(go, 40); };
+    go();
+  }
+  componentWillUnmount() { this._off && this._off(); }
+  renderVals() {
+    const opts = ['Solar PV', 'Battery Storage', 'Heat Pumps', 'EV Chargers', 'Underfloor Heating'];
+    const p = this.state.picked;
+    return {
+      sent: this.state.sent, notSent: !this.state.sent,
+      chips: opts.map(o => { const on = p.indexOf(o) > -1; return { label: o, bg: on ? 'var(--lime)' : 'transparent', bd: on ? 'var(--lime)' : 'rgba(27,43,34,.25)', toggle: () => this.setState(s => ({ picked: on ? s.picked.filter(x => x !== o) : s.picked.concat(o) })) }; }),
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      reset: () => this.setState({ sent: false, picked: [] })
+    };
+  }
+}
+</script>
+</body>
+</html>

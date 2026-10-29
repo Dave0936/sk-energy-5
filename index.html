@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Thin.otf') format('opentype');font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Light.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Area Inktrap';src:url('fonts/AreaInktrap-Italic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
+:root{--ink:#1b2b22;--forest:#22362b;--forest2:#2d4437;--forest3:#3a5546;--cream:#edede2;--cream2:#f6f6ee;--lime:#cbf24c;--limeD:#b3d93a;--grass:#3f9b52;--sage:#dcebba}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream2);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:350;-webkit-font-smoothing:antialiased;text-wrap:pretty;overflow-x:hidden}
+a{color:var(--grass);text-decoration:none}
+a:hover{color:var(--ink)}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+input,textarea,button{font:inherit;color:inherit}
+@keyframes skdrift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes skbob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+</style>
+<script src="sk-motion.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip">
+
+<dc-import name="SK Nav" hint-size="100%,1px"></dc-import>
+
+<section id="top" style="position:relative;height:520vh;background:var(--forest)">
+  <div id="sk-hero-pin" style="position:sticky;top:0;height:100vh;overflow:hidden">
+    <div style="position:absolute;inset:0">
+      <div data-hp="0" style="position:absolute;inset:0;opacity:1;transition:opacity .8s ease">
+        <div data-hpar="0" style="position:absolute;inset:-8% 0"><img src="images/hero.png" alt="Solar panels on a modern Fife home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block" /></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,43,34,.62) 0%,rgba(27,43,34,.34) 14%,rgba(27,43,34,0) 26%,rgba(27,43,34,0) 34%,rgba(27,43,34,.3) 52%,rgba(27,43,34,.62) 68%,rgba(27,43,34,.93) 88%,rgba(27,43,34,.97) 100%)"></div>
+        <div data-hpc="0" style="position:absolute;inset:auto 0 0 0;display:flex;flex-direction:column;gap:26px;padding:0 clamp(72px,11vw,150px) clamp(40px,7vh,88px) clamp(16px,4vw,56px)">
+          <div style="display:flex;align-items:center;gap:12px;align-self:flex-start;max-width:100%;padding:9px 18px 9px 16px;border-radius:999px;background:rgba(27,43,34,.72);backdrop-filter:blur(6px);font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--cream)">
+            <span style="width:22px;height:1px;background:var(--lime);flex:0 0 auto"></span>Architecturally Led Renewable Energy Solutions
+          </div>
+          <h1 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(46px,10.4vw,168px);line-height:.92;letter-spacing:-.035em;color:var(--lime);max-width:min(15ch,100%)">Step into the future of energy</h1>
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:34px">
+            <p style="margin:0;max-width:46ch;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:rgba(237,237,226,.92)">Empowering your space with sustainable solar, smart heating and reliable aftercare services.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,2.4vw,34px);padding:12px 22px;border-radius:14px;background:rgba(27,43,34,.6);backdrop-filter:blur(6px)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(203,242,76,.8);white-space:nowrap">Accredited by</span>
+              <img src="images/acc-mcs.png" alt="MCS certified" style="height:clamp(15px,1.5vw,19px);width:auto;display:block;opacity:.95" />
+              <img src="images/acc-trustmark.png" alt="TrustMark — Government Endorsed Quality" style="height:clamp(19px,2vw,26px);width:auto;display:block;opacity:.95" />
+              <img src="images/acc-trustpilot.png" alt="Trustpilot" style="height:clamp(17px,1.8vw,23px);width:auto;display:block;opacity:.95" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-hp="1" style="position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s ease">
+        <div data-hpar="1" style="position:absolute;inset:-8% 0"><img src="images/sk/sk-13.jpg" alt="An electric car charging at dusk beside a stone wall" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 50%;display:block" /></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(27,43,34,.9) 0%,rgba(27,43,34,.55) 38%,rgba(27,43,34,.08) 70%,rgba(27,43,34,.5) 100%)"></div>
+        <div data-hpc="1" style="position:absolute;inset:0;display:flex;flex-wrap:wrap;align-content:center;gap:clamp(16px,2vw,28px);padding:88px clamp(16px,4vw,56px) clamp(40px,6vh,80px)">
+          <div style="flex:1 1 min(100%,560px);display:flex;flex-direction:column;gap:18px;min-width:0">
+            <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--lime)">Chapter two — the car charges itself</span>
+            <h2 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(34px,7vw,104px);line-height:.94;letter-spacing:-.035em;color:var(--cream)">Fill up on<br /><span style="color:var(--lime)">your own roof</span></h2>
+          </div>
+          <div style="flex:1 1 min(100%,360px);display:flex;flex-direction:column;justify-content:flex-end;gap:22px;min-width:0">
+            <div style="display:flex;align-items:flex-start;gap:16px">
+              <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:200;font-size:clamp(54px,8vw,112px);line-height:.86;letter-spacing:-.05em;color:var(--lime)">4p</span>
+              <span style="padding-top:10px;max-width:20ch;font-size:15.5px;line-height:1.5;color:rgba(237,237,226,.85)">a mile, charging on solar you generated yourself — against roughly 17p on the grid.</span>
+            </div>
+            <p style="margin:0;max-width:34ch;font-size:16.5px;line-height:1.6;color:rgba(237,237,226,.9)">A charge point wired into the same system as your panels and battery, so the cheapest electricity in the house goes to the car.</p>
+          </div>
+        </div>
+      </div>
+      <div data-hp="2" style="position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s ease">
+        <div style="position:absolute;inset:0;display:flex;flex-wrap:wrap">
+          <div style="position:relative;flex:1 1 46%;min-height:34%;background:var(--forest)">
+            <div data-hpc="2" style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,2vh,20px);padding:clamp(84px,10vh,110px) clamp(16px,4vw,72px) clamp(20px,4vw,56px)">
+              <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--lime)">Chapter three — the house stays warm</span>
+              <h2 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.6vw,78px);line-height:.98;letter-spacing:-.035em;color:var(--cream);max-width:14ch">Heat that thinks ahead</h2>
+              <p style="margin:0;max-width:36ch;font-size:16.5px;line-height:1.6;color:rgba(237,237,226,.82)">An air source heat pump runs on a fraction of the energy a gas boiler burns, and smart controls learn when you're actually home.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:30px;padding-top:6px">
+                <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:200;font-size:clamp(34px,4vw,58px);line-height:1;letter-spacing:-.04em;color:var(--lime)">3.5×</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,237,226,.6)">Heat per unit in</span></div>
+                <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:200;font-size:clamp(34px,4vw,58px);line-height:1;letter-spacing:-.04em;color:var(--lime)">−4°C</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,237,226,.6)">Still working outside</span></div>
+              </div>
+            </div>
+          </div>
+          <div style="position:relative;flex:1 1 46%;min-height:34%;overflow:hidden">
+            <div data-hpar="2" style="position:absolute;inset:-8% 0"><img src="images/sk/sk-10.jpg" alt="Bare feet on a warm oak floor in a bright kitchen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block" /></div>
+          </div>
+        </div>
+      </div>
+      <div data-hp="3" style="position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s ease">
+        <div data-hpar="3" style="position:absolute;inset:-8% 0"><img src="images/sk/sk-09.jpg" alt="An SK engineer talking a couple through their heating" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block" /></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,43,34,.55) 0%,rgba(27,43,34,.82) 45%,rgba(27,43,34,.92) 100%)"></div>
+        <div data-hpc="3" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding:88px clamp(16px,4vw,56px) clamp(40px,6vh,80px)">
+          <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--lime)">Chapter four — and we're still here</span>
+          <blockquote style="margin:0;max-width:22ch;font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(28px,5vw,74px);line-height:1.06;letter-spacing:-.02em;color:var(--cream)">“They picked up the phone three years later.”</blockquote>
+          <p style="margin:0;max-width:42ch;font-size:16.5px;line-height:1.6;color:rgba(237,237,226,.86)">Same engineers, same office in Dunfermline. Monitoring, servicing and straight answers long after the scaffold comes down — because the system has to earn its keep for twenty years, not twenty days.</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:26px;padding-top:6px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Real people</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">No call centre</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">No subcontractors</span>
+          </div>
+        </div>
+      </div>
+      <div data-hp="4" style="position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s ease;background:var(--forest)">
+        <div data-hpc="4" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vh,40px);padding:88px clamp(16px,4vw,56px) clamp(30px,5vh,64px)">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:clamp(14px,2vw,30px)">
+            <img src="images/logo-lime-on-ink.svg" alt="SK Energy" style="width:clamp(260px,62vw,980px);height:auto;display:block" />
+            <span style="font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(16px,1.6vw,22px);color:rgba(237,237,226,.75)">Dunfermline, Fife</span>
+          </div>
+          <div style="height:1px;background:rgba(203,242,76,.28)"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,56px);align-items:flex-end;justify-content:space-between">
+            <p style="margin:0;max-width:34ch;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(22px,2.8vw,42px);line-height:1.1;letter-spacing:-.025em;color:var(--cream)">Warmer homes. Lower bills. A secure tomorrow.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;max-width:42ch">
+              <span style="padding:10px 17px;border:1px solid rgba(203,242,76,.4);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Solar PV</span>
+              <span style="padding:10px 17px;border:1px solid rgba(203,242,76,.4);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Battery Storage</span>
+              <span style="padding:10px 17px;border:1px solid rgba(203,242,76,.4);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Heat Pumps</span>
+              <span style="padding:10px 17px;border:1px solid rgba(203,242,76,.4);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">EV Chargers</span>
+              <span style="padding:10px 17px;border:1px solid rgba(203,242,76,.4);border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Underfloor Heating</span>
+            </div>
+            <a href="#contact" style="padding:16px 26px;border-radius:999px;background:var(--lime);color:var(--forest);font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500;white-space:nowrap" style-hover="background:#dcf77f">Start your project →</a>
+          </div>
+        </div>
+      </div>
+      <div id="sk-hero-rail" style="position:absolute;right:clamp(16px,4vw,56px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:12px;z-index:4">
+        <span data-hdot="0" style="width:26px;height:2px;background:var(--lime);transition:width .4s ease,background .4s ease,opacity .4s ease"></span>
+        <span data-hdot="1" style="width:10px;height:2px;background:rgba(237,237,226,.35);transition:width .4s ease,background .4s ease,opacity .4s ease"></span>
+        <span data-hdot="2" style="width:10px;height:2px;background:rgba(237,237,226,.35);transition:width .4s ease,background .4s ease,opacity .4s ease"></span>
+        <span data-hdot="3" style="width:10px;height:2px;background:rgba(237,237,226,.35);transition:width .4s ease,background .4s ease,opacity .4s ease"></span>
+        <span data-hdot="4" style="width:10px;height:2px;background:rgba(237,237,226,.35);transition:width .4s ease,background .4s ease,opacity .4s ease"></span>
+      </div>
+      <div id="sk-scroll" style="position:absolute;right:clamp(16px,4vw,56px);bottom:clamp(14px,2.4vh,26px);display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,237,226,.55);z-index:4">
+        <span style="width:34px;height:1px;background:linear-gradient(90deg,var(--lime),transparent);animation:skbob 2.4s ease-in-out infinite"></span>Keep scrolling
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream);padding:clamp(54px,8vw,104px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;gap:clamp(24px,3vw,46px);grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))">
+    <div data-reveal="up" style="display:flex;flex-direction:column;gap:8px">
+      <span data-count="2018" style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(46px,5.4vw,80px);line-height:1;letter-spacing:-.03em;color:var(--forest)">2018</span>
+      <span style="font-size:15px;line-height:1.45;color:rgba(27,43,34,.62);max-width:22ch">Installing across Scotland since, from Dunfermline</span>
+    </div>
+    <div data-reveal="up" data-delay="110" style="display:flex;flex-direction:column;gap:8px">
+      <span data-count="5" style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(46px,5.4vw,80px);line-height:1;letter-spacing:-.03em;color:var(--forest)">5</span>
+      <span style="font-size:15px;line-height:1.45;color:rgba(27,43,34,.62);max-width:22ch">Technologies specified as one joined-up system</span>
+    </div>
+    <div data-reveal="up" data-delay="220" style="display:flex;flex-direction:column;gap:8px">
+      <span data-count="0" style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(46px,5.4vw,80px);line-height:1;letter-spacing:-.03em;color:var(--forest)">0</span>
+      <span style="font-size:15px;line-height:1.45;color:rgba(27,43,34,.62);max-width:22ch">Handoffs to subcontractors — same team throughout</span>
+    </div>
+    <div data-reveal="up" data-delay="330" style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(46px,5.4vw,80px);line-height:1;letter-spacing:-.03em;color:var(--grass)">∞</span>
+      <span style="font-size:15px;line-height:1.45;color:rgba(27,43,34,.62);max-width:22ch">Aftercare — we stay reachable long after handover</span>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="background:var(--cream2);padding:clamp(70px,11vw,150px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;gap:clamp(36px,6vw,86px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start">
+    <div data-sticky="1" style="position:sticky;top:120px;display:flex;flex-direction:column;gap:22px">
+      <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">From idea to installation</span>
+      <h2 data-reveal="up" data-delay="90" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(34px,4.6vw,66px);line-height:1.02;letter-spacing:-.03em;color:var(--forest);max-width:16ch">Your route to renewable energy</h2>
+      <p data-reveal="up" data-delay="160" style="margin:0;max-width:42ch;font-size:17px;line-height:1.6;color:rgba(27,43,34,.72)">A straightforward, end-to-end process shaped around your property. One experienced team takes care of every detail, then stays with you after installation.</p>
+      <div data-reveal="up" data-delay="230" style="position:relative;height:clamp(190px,26vw,300px);border-radius:18px;overflow:hidden;background:var(--forest2)">
+        <img src="images/sk/sk-05.jpg" alt="Underfloor heating pipework being laid by hand" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+      </div>
+      <a href="#contact" style="align-self:flex-start;padding:14px 24px;border-radius:999px;background:var(--forest);color:var(--lime);font-family:'Area Inktrap','Outfit',sans-serif;font-size:15px" style-hover="background:var(--forest2)">Start your project →</a>
+    </div>
+    <div style="position:relative;padding-left:clamp(26px,3vw,44px)">
+      <div style="position:absolute;left:0;top:6px;bottom:6px;width:2px;background:rgba(27,43,34,.1)">
+        <div id="sk-prog" style="width:100%;height:0%;background:var(--grass)"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:clamp(34px,5vw,64px)">
+        <div data-reveal="left" style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--grass)">01</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(23px,2.5vw,34px);letter-spacing:-.02em;color:var(--forest)">Book a consultation</h3>
+          <p style="margin:0;max-width:48ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.7)">Tell us about your property, energy use and priorities. We’ll answer your questions and establish the right starting point with no obligation.</p>
+        </div>
+        <div data-reveal="left" style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--grass)">02</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(23px,2.5vw,34px);letter-spacing:-.02em;color:var(--forest)">Bespoke solar design</h3>
+          <p style="margin:0;max-width:48ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.7)">Our specialists turn the survey into a considered system design, balancing performance, aesthetics and budget around your long-term goals.</p>
+        </div>
+        <div data-reveal="left" style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--grass)">03</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(23px,2.5vw,34px);letter-spacing:-.02em;color:var(--forest)">Professional installation</h3>
+          <p style="margin:0;max-width:48ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.7)">Our accredited team manages installation safely and efficiently, with careful workmanship and minimal disruption to your day.</p>
+        </div>
+        <div data-reveal="left" style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--grass)">04</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(23px,2.5vw,34px);letter-spacing:-.02em;color:var(--forest)">Energy independence</h3>
+          <p style="margin:0;max-width:48ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.7)">Once your system is live, we help you understand its performance and remain available for ongoing advice, monitoring and aftercare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--forest);padding:clamp(70px,11vw,150px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(36px,5vw,66px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--cream)">Our expertise</span>
+        <h2 data-reveal="up" data-delay="90" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(34px,4.6vw,66px);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:20ch">Our green energy solutions</h2>
+      </div>
+      <p data-reveal="up" data-delay="150" style="margin:0;max-width:40ch;font-size:16.5px;line-height:1.6;color:rgba(237,237,226,.72)">From solar PV and battery storage to heat pumps, EV chargers and underfloor heating, we design practical renewable energy systems around your property, priorities and long-term goals.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a href="Service.dc.html?slug=solar-pv" data-reveal="up" style="display:flex;flex-direction:column;gap:11px;padding:26px;border-radius:16px;background:var(--lime);color:var(--forest);flex:1 1 clamp(260px,52%,660px);min-height:360px;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-6px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(27,43,34,.55)">Generation</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:34px;letter-spacing:-.025em;color:var(--forest)">Solar PV</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.55;color:rgba(27,43,34,.78)">Roof or ground-mount arrays designed around your roof, your usage and your long-term plans.</p>
+          <span style="margin-top:auto;font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--forest)">Explore service →</span>
+        </a>
+        <div style="display:flex;flex-direction:column;gap:14px;flex:1 1 clamp(260px,32%,420px)">
+          <a href="Service.dc.html?slug=battery-storage" data-reveal="up" style="display:flex;flex-direction:column;gap:11px;padding:26px;border-radius:16px;background:var(--forest2);border:1px solid rgba(203,242,76,.22);color:var(--cream);flex:1 1 auto;min-height:196px;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-6px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)">Storage</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:25px;letter-spacing:-.025em;color:var(--cream)">Battery Storage</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.55;color:rgba(237,237,226,.74)">Keep the power you generate and run the house on it after sunset.</p>
+          <span style="margin-top:auto;font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--lime)">Explore service →</span>
+        </a>
+          <div data-reveal="scale" style="position:relative;flex:1 1 auto;min-height:148px;border-radius:16px;overflow:hidden;background:var(--forest3)">
+          <img src="images/sk/sk-04.jpg" alt="A white Scottish home with solar panels on the roof" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <div data-reveal="scale" style="position:relative;flex:1 1 clamp(220px,26%,330px);min-height:240px;border-radius:16px;overflow:hidden;background:var(--forest3)">
+          <img src="images/sk/sk-14.jpg" alt="A stone farmhouse with an air source heat pump" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+        <a href="Service.dc.html?slug=heat-pumps" data-reveal="up" style="display:flex;flex-direction:column;gap:11px;padding:26px;border-radius:16px;background:var(--forest2);border:1px solid rgba(203,242,76,.22);color:var(--cream);flex:1 1 clamp(260px,36%,470px);min-height:240px;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-6px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)">Heating</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:25px;letter-spacing:-.025em;color:var(--cream)">Heat Pumps</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.55;color:rgba(237,237,226,.74)">Low-carbon heating and hot water, with emitters sized room by room.</p>
+          <span style="margin-top:auto;font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--lime)">Explore service →</span>
+        </a>
+        <a href="Service.dc.html?slug=ev-chargers" data-reveal="up" style="display:flex;flex-direction:column;gap:11px;padding:26px;border-radius:16px;background:var(--grass);color:#fff;flex:1 1 clamp(220px,26%,340px);min-height:240px;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-6px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.8)">Charging</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:25px;letter-spacing:-.025em;color:#fff">EV Chargers</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.9)">Smart charging at home that fills up on the cheapest, cleanest hours.</p>
+          <span style="margin-top:auto;font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:#fff">Explore service →</span>
+        </a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a href="Service.dc.html?slug=underfloor-heating" data-reveal="up" style="display:flex;flex-direction:column;gap:11px;padding:26px;border-radius:16px;background:var(--forest2);border:1px solid rgba(203,242,76,.22);color:var(--cream);flex:1 1 clamp(260px,34%,440px);min-height:210px;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-6px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)">Comfort</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:25px;letter-spacing:-.025em;color:var(--cream)">Underfloor Heating</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.55;color:rgba(237,237,226,.74)">Where we started — even, efficient warmth in every room.</p>
+          <span style="margin-top:auto;font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--lime)">Explore service →</span>
+        </a>
+        <a href="Warranty.dc.html" data-reveal="up" style="display:flex;flex-direction:column;gap:11px;padding:26px;border-radius:16px;background:var(--sage);color:var(--forest);flex:1 1 clamp(260px,30%,400px);min-height:210px;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-6px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(27,43,34,.55)">Every install</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:25px;letter-spacing:-.025em;color:var(--forest)">Aftercare included</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.55;color:rgba(27,43,34,.78)">Monitoring, servicing and warranty support from the team that installed your system.</p>
+          <span style="margin-top:auto;font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--forest)">Register a warranty →</span>
+        </a>
+        <div data-reveal="scale" style="position:relative;flex:1 1 clamp(220px,28%,360px);min-height:210px;border-radius:16px;overflow:hidden;background:var(--forest3)">
+          <img src="images/sk/sk-16.jpg" alt="An engineer commissioning a hot water cylinder" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<section id="stages" style="position:relative;height:300vh;background:var(--cream)">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;gap:clamp(16px,2.4vh,30px);padding:clamp(74px,10vh,110px) clamp(16px,4vw,56px) clamp(24px,5vh,56px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px">
+      <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">What you can expect</span>
+      <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(24px,3vw,42px);letter-spacing:-.02em;color:var(--forest)"><span id="sk-stage-num">01</span><span style="color:rgba(27,43,34,.3)"> / 03</span></span>
+    </div>
+    <div style="flex:1 1 auto;min-height:0;display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,44px);align-items:stretch">
+      <div style="position:relative;flex:1 1 clamp(260px,46%,660px);min-height:180px;border-radius:18px;overflow:hidden;background:var(--forest3)">
+        <img data-stage-img="0" src="images/sk/sk-02.jpg" alt="A consultation over plans at a kitchen table" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transform:scale(1);transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)" />
+        <img data-stage-img="1" src="images/sk/sk-01.jpg" alt="Two engineers wiring an inverter and consumer unit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transform:scale(1.05);transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)" />
+        <img data-stage-img="2" src="images/sk/sk-12.jpg" alt="A couple reading their energy app at home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transform:scale(1.05);transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)" />
+      </div>
+      <div style="position:relative;flex:1 1 clamp(280px,44%,560px);min-height:clamp(280px,38vh,420px)">
+        <div data-stage-panel="0" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:16px;opacity:1;transform:translateY(0px);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">Personal approach</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(30px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--forest);max-width:16ch">Designed around you</h3>
+          <p style="margin:0;max-width:44ch;font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(27,43,34,.72)">We start with your property, energy use and long-term goals, then shape a solution that fits rather than taking a one-size-fits-all approach.</p>
+        </div>
+        <div data-stage-panel="1" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:16px;opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">Careful delivery</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(30px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--forest);max-width:16ch">One joined-up process</h3>
+          <p style="margin:0;max-width:44ch;font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(27,43,34,.72)">From consultation and system design through to installation and handover, each stage is planned and managed by our experienced team.</p>
+        </div>
+        <div data-stage-panel="2" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:16px;opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">Lasting support</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(30px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--forest);max-width:16ch">Here after handover</h3>
+          <p style="margin:0;max-width:44ch;font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(27,43,34,.72)">We help you understand your new system and remain available with practical advice, maintenance and aftercare when you need it.</p>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+          <span data-stage-dot="0" style="width:28px;height:8px;border-radius:999px;background:var(--grass);transition:width .4s ease,background .4s ease"></span>
+          <span data-stage-dot="1" style="width:8px;height:8px;border-radius:999px;background:rgba(27,43,34,.2);transition:width .4s ease,background .4s ease"></span>
+          <span data-stage-dot="2" style="width:8px;height:8px;border-radius:999px;background:rgba(27,43,34,.2);transition:width .4s ease,background .4s ease"></span>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;height:clamp(320px,62vh,620px);overflow:hidden;background:var(--forest)">
+  <div data-par="0.3" style="position:absolute;inset:-14% 0;background:var(--forest3)"><img src="images/sk/sk-15.jpg" alt="An installer checking a roof survey on a tablet" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,43,34,.8),rgba(27,43,34,.15) 62%)"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:0 clamp(16px,4vw,56px) clamp(34px,5vw,60px);max-width:900px">
+    <h2 data-reveal="up" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(28px,4.2vw,60px);line-height:1.04;letter-spacing:-.03em;color:var(--lime);max-width:20ch">One team on your roof, start to finish</h2>
+    <p data-reveal="up" data-delay="100" style="margin:0;max-width:44ch;font-size:16.5px;line-height:1.6;color:rgba(237,237,226,.85)">Surveyed, designed, installed and maintained by the same accredited people. Nothing handed to a stranger.</p>
+  </div>
+</section>
+
+<section id="serve" style="background:var(--cream2);padding:clamp(70px,11vw,150px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;gap:clamp(30px,4vw,58px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:start">
+    <div data-sticky="1" style="position:sticky;top:120px;display:flex;flex-direction:column;gap:20px">
+      <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">Designed around you</span>
+      <h2 data-reveal="up" data-delay="90" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(34px,4.6vw,66px);line-height:1.02;letter-spacing:-.03em;color:var(--forest);max-width:15ch">Tailored solutions for every space</h2>
+      <div data-reveal="scale" data-delay="160" style="position:relative;height:clamp(220px,30vw,360px);border-radius:18px;overflow:hidden;background:var(--forest2)">
+        <img src="images/sk/sk-18.jpg" alt="A whitewashed cottage with solar panels at sunset" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <a href="#contact" data-reveal="right" style="display:flex;flex-direction:column;gap:11px;padding:28px;border-radius:16px;background:var(--cream);color:var(--forest);transition:background .4s ease" style-hover="background:var(--sage)">
+        <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:clamp(22px,2.3vw,30px);letter-spacing:-.02em">Homeowners</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">Cut household energy costs with a system designed around your property, usage and long-term plans — from solar and battery storage to heat pumps and EV charging.</p>
+        <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--grass)">Explore home energy →</span>
+      </a>
+      <a href="#contact" data-reveal="right" data-delay="90" style="display:flex;flex-direction:column;gap:11px;padding:28px;border-radius:16px;background:var(--cream);color:var(--forest);transition:background .4s ease" style-hover="background:var(--sage)">
+        <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:clamp(22px,2.3vw,30px);letter-spacing:-.02em">Property developers</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">Build renewable technology into projects from the outset. We coordinate with your programme to create compliant, marketable homes with solar, storage, heating and charging specified as one joined-up system.</p>
+        <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--grass)">Talk to our new build team →</span>
+      </a>
+      <a href="#contact" data-reveal="right" data-delay="180" style="display:flex;flex-direction:column;gap:11px;padding:28px;border-radius:16px;background:var(--cream);color:var(--forest);transition:background .4s ease" style-hover="background:var(--sage)">
+        <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:500;font-size:clamp(22px,2.3vw,30px);letter-spacing:-.02em">Businesses &amp; industrial property</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">Reduce operational costs and strengthen sustainability targets with scalable commercial energy systems designed around site demand, future growth and the practical realities of keeping your business moving.</p>
+        <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:14.5px;color:var(--grass)">Talk to our commercial team →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="cases" style="position:relative;height:320vh;background:var(--forest)">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vh,36px);padding:74px 0 clamp(14px,3vh,42px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;padding:0 clamp(16px,4vw,56px)">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--cream)">Selected work</span>
+        <h2 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(30px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--cream);max-width:18ch">Three jobs, start to finish</h2>
+      </div>
+      <a href="Work.dc.html" style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:15px;color:var(--lime)" style-hover="color:#fff">All case studies →</a>
+    </div>
+    <div id="sk-hscroll" style="flex:1 1 auto;min-height:0;overflow-x:auto;overflow-y:hidden;padding:0 clamp(16px,4vw,56px)">
+      <div id="sk-htrack" style="display:flex;align-items:stretch;gap:18px;width:max-content;height:100%;will-change:transform">
+      <a href="CaseStudy.dc.html?slug=kinross-farmhouse" style="display:flex;flex-wrap:wrap;align-content:stretch;flex:0 0 auto;width:min(86vw,820px);height:100%;min-height:270px;border-radius:18px;overflow:hidden;background:var(--cream);color:var(--forest)">
+        <div style="position:relative;flex:1 1 clamp(190px,36%,320px);min-height:130px;background:var(--forest3)">
+          <img src="images/sk/sk-21.jpg" alt="A stone farmhouse with roof solar under a dramatic sky" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+          <span style="position:absolute;left:18px;top:18px;padding:7px 13px;border-radius:999px;background:var(--lime);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)">Case 01</span>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:clamp(9px,1.5vh,16px);padding:clamp(16px,2.1vw,28px);flex:1 1 clamp(280px,54%,460px);min-width:0;overflow:hidden">
+          <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:15px;color:var(--forest)">Residential retrofit · Kinross</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.025em;color:var(--forest)">Kinross farmhouse, off the oil</h3>
+          <dl style="margin:0;display:grid;grid-template-columns:auto 1fr">
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Budget</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">£34,600</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Energy saved</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">£2,150/yr</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">On site</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">3 weeks</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Systems</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">Solar PV, battery, heat pump, underfloor</dd>
+          </dl>
+          <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:15px;font-weight:500;color:var(--grass)">Read the case study →</span>
+        </div>
+      </a>
+      <a href="CaseStudy.dc.html?slug=rosyth-workshop" style="display:flex;flex-wrap:wrap;align-content:stretch;flex:0 0 auto;width:min(86vw,820px);height:100%;min-height:270px;border-radius:18px;overflow:hidden;background:var(--cream);color:var(--forest)">
+        <div style="position:relative;flex:1 1 clamp(190px,36%,320px);min-height:130px;background:var(--forest3)">
+          <img src="images/sk/sk-23.jpg" alt="An engineering workshop with EV chargers by the door" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+          <span style="position:absolute;left:18px;top:18px;padding:7px 13px;border-radius:999px;background:var(--sage);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)">Case 02</span>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:clamp(9px,1.5vh,16px);padding:clamp(16px,2.1vw,28px);flex:1 1 clamp(280px,54%,460px);min-width:0;overflow:hidden">
+          <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:15px;color:var(--forest)">Commercial · Rosyth</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.025em;color:var(--forest)">Rosyth engineering workshop</h3>
+          <dl style="margin:0;display:grid;grid-template-columns:auto 1fr">
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Budget</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">£18,400</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Day load covered</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">41%</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Payback</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">4.1 yrs</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Systems</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">9.9 kWp solar PV, 2 EV chargers</dd>
+          </dl>
+          <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:15px;font-weight:500;color:var(--grass)">Read the case study →</span>
+        </div>
+      </a>
+      <a href="CaseStudy.dc.html?slug=halbeath-development" style="display:flex;flex-wrap:wrap;align-content:stretch;flex:0 0 auto;width:min(86vw,820px);height:100%;min-height:270px;border-radius:18px;overflow:hidden;background:var(--cream);color:var(--forest)">
+        <div style="position:relative;flex:1 1 clamp(190px,36%,320px);min-height:130px;background:var(--forest3)">
+          <img src="images/sk/sk-20.jpg" alt="Aerial view of the Halbeath new-build development" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block" />
+          <span style="position:absolute;left:18px;top:18px;padding:7px 13px;border-radius:999px;background:var(--grass);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#fff">Case 03</span>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:clamp(9px,1.5vh,16px);padding:clamp(16px,2.1vw,28px);flex:1 1 clamp(280px,54%,460px);min-width:0;overflow:hidden">
+          <span style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:15px;color:var(--forest)">New build · Dunfermline</span>
+          <h3 style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.025em;color:var(--forest)">Halbeath, 26 plots on programme</h3>
+          <dl style="margin:0;display:grid;grid-template-columns:auto 1fr">
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Contract</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">£412k</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Plots</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">26</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Weeks lost</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">0</dd>
+            <dt style="padding:clamp(5px,1vh,10px) 20px clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(27,43,34,.58);white-space:nowrap">Systems</dt>
+            <dd style="margin:0;padding:clamp(5px,1vh,10px) 0;border-top:1px solid rgba(27,43,34,.13);text-align:right;font-size:15.5px;color:var(--forest)">Heat pumps, underfloor, EV-ready</dd>
+          </dl>
+          <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:15px;font-weight:500;color:var(--grass)">Read the case study →</span>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sage);padding:clamp(66px,9vw,120px) 0;overflow:hidden">
+  <div style="padding:0 clamp(16px,4vw,56px);max-width:1280px;margin:0 auto 44px">
+    <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">In their words</span>
+  </div>
+  <div style="display:flex;width:max-content;gap:18px;animation:skdrift 46s linear infinite">
+    <div style="display:flex;gap:18px">
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--cream2);border:1px solid rgba(27,43,34,.1)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--forest)">“SK Energy transformed our home. Professional, efficient, and the savings on our bills were immediate.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Solar PV</span>
+      </div>
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--forest)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--cream)">“The aftercare is unparalleled. Responsive, knowledgeable, and they genuinely care about the longevity of the install.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)">Aftercare</span>
+      </div>
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--cream2);border:1px solid rgba(27,43,34,.1)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--forest)">“We switched to an air source heat pump and couldn't be happier — remarkably efficient, and the carbon footprint dropped with it.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Heat Pumps</span>
+      </div>
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--cream2);border:1px solid rgba(27,43,34,.1)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--forest)">“The team was professional, the installation swift, and the performance is exactly as promised.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Installation</span>
+      </div>
+    </div>
+    <div aria-hidden="true" style="display:flex;gap:18px">
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--cream2);border:1px solid rgba(27,43,34,.1)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--forest)">“SK Energy transformed our home. Professional, efficient, and the savings on our bills were immediate.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Solar PV</span>
+      </div>
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--forest)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--cream)">“The aftercare is unparalleled. Responsive, knowledgeable, and they genuinely care about the longevity of the install.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)">Aftercare</span>
+      </div>
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--cream2);border:1px solid rgba(27,43,34,.1)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--forest)">“We switched to an air source heat pump and couldn't be happier — remarkably efficient, and the carbon footprint dropped with it.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Heat Pumps</span>
+      </div>
+      <div style="width:min(78vw,420px);padding:30px;border-radius:16px;background:var(--cream2);border:1px solid rgba(27,43,34,.1)">
+        <p style="margin:0 0 18px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.4;letter-spacing:.002em;color:var(--forest)">“The team was professional, the installation swift, and the performance is exactly as promised.”</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Installation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream2);padding:clamp(70px,10vw,130px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(26px,4vw,46px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);color:var(--forest)">News &amp; insights</span>
+        <h2 data-reveal="up" data-delay="80" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.03em;color:var(--forest)">Straight answers, in writing</h2>
+      </div>
+      <a data-reveal="up" href="News.dc.html" style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;color:var(--grass)" style-hover="color:var(--forest)">All articles →</a>
+    </div>
+    <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))">
+      <a data-reveal="up" data-delay="0" href="Article.dc.html?slug=heat-pump-running-costs-fife-winter" style="display:flex;flex-direction:column;gap:14px;color:var(--forest)" style-hover="color:var(--grass)">
+        <div style="aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--forest3)"><img src="images/sk/sk-14.jpg" alt="A stone farmhouse with an air source heat pump" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Guide · 6 min</span>
+        <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(20px,2vw,26px);line-height:1.15;letter-spacing:-.02em">What a heat pump actually costs to run in a Fife winter</span>
+      </a>
+      <a data-reveal="up" data-delay="90" href="Article.dc.html?slug=home-energy-scotland-grant-loan" style="display:flex;flex-direction:column;gap:14px;color:var(--forest)" style-hover="color:var(--grass)">
+        <div style="aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--forest3)"><img src="images/sk/sk-03.jpg" alt="System design drawings on a desk" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">Funding · 4 min</span>
+        <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(20px,2vw,26px);line-height:1.15;letter-spacing:-.02em">Home Energy Scotland grant & loan, explained plainly</span>
+      </a>
+      <a data-reveal="up" data-delay="180" href="Article.dc.html?slug=ev-charging-off-peak-tariff" style="display:flex;flex-direction:column;gap:14px;color:var(--forest)" style-hover="color:var(--grass)">
+        <div style="aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--forest3)"><img src="images/sk/sk-06.jpg" alt="An EV charging app beside a car" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grass)">EV · 3 min</span>
+        <span style="font-family:'Area Inktrap','Outfit',sans-serif;font-weight:400;font-size:clamp(20px,2vw,26px);line-height:1.15;letter-spacing:-.02em">Charging on an off-peak tariff: the numbers</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--cream);padding:clamp(70px,11vw,150px) clamp(16px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;gap:clamp(30px,5vw,70px);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:start">
+    <div data-sticky="1" style="display:flex;flex-direction:column;gap:18px;position:sticky;top:120px">
+      <span data-reveal="up" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(15px,1.3vw,17.5px);letter-spacing:.005em;color:var(--forest)">Straight answers</span>
+      <h2 data-reveal="up" data-delay="90" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(34px,4.6vw,66px);line-height:1.02;letter-spacing:-.03em;color:var(--forest);max-width:14ch">The questions we get asked</h2>
+    </div>
+    <div data-reveal="up" style="display:flex;flex-direction:column">
+      <details style="border-top:1px solid rgba(27,43,34,.16);padding:22px 0">
+        <summary style="display:flex;gap:18px;justify-content:space-between;align-items:baseline;font-family:'Area Inktrap','Outfit',sans-serif;font-size:clamp(18px,1.9vw,22px);color:var(--forest)">Does solar work in Scotland?<span style="color:var(--grass)">+</span></summary>
+        <p style="margin:14px 0 0;max-width:52ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">Yes. Panels run on daylight, not heat — Scottish daylight hours across the year are ample. Your survey models the actual yield for your roof pitch, orientation and shading before you commit.</p>
+      </details>
+      <details style="border-top:1px solid rgba(27,43,34,.16);padding:22px 0">
+        <summary style="display:flex;gap:18px;justify-content:space-between;align-items:baseline;font-family:'Area Inktrap','Outfit',sans-serif;font-size:clamp(18px,1.9vw,22px);color:var(--forest)">How long does an install take?<span style="color:var(--grass)">+</span></summary>
+        <p style="margin:14px 0 0;max-width:52ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">Most domestic solar and battery installations are completed within a few days on site. Heat pumps take longer where heat emitters need changing. You'll have a dated schedule before we start.</p>
+      </details>
+      <details style="border-top:1px solid rgba(27,43,34,.16);padding:22px 0">
+        <summary style="display:flex;gap:18px;justify-content:space-between;align-items:baseline;font-family:'Area Inktrap','Outfit',sans-serif;font-size:clamp(18px,1.9vw,22px);color:var(--forest)">Are you accredited?<span style="color:var(--grass)">+</span></summary>
+        <p style="margin:14px 0 0;max-width:52ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">We're MCS certified and TrustMark endorsed, which is also what unlocks eligibility for the main grant and export schemes.</p>
+      </details>
+      <details style="border-top:1px solid rgba(27,43,34,.16);padding:22px 0">
+        <summary style="display:flex;gap:18px;justify-content:space-between;align-items:baseline;font-family:'Area Inktrap','Outfit',sans-serif;font-size:clamp(18px,1.9vw,22px);color:var(--forest)">Do you subcontract the work?<span style="color:var(--grass)">+</span></summary>
+        <p style="margin:14px 0 0;max-width:52ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">No. The team that surveys your property designs it, installs it and handles the aftercare — so nothing gets lost between trades.</p>
+      </details>
+      <details style="border-top:1px solid rgba(27,43,34,.16);border-bottom:1px solid rgba(27,43,34,.16);padding:22px 0">
+        <summary style="display:flex;gap:18px;justify-content:space-between;align-items:baseline;font-family:'Area Inktrap','Outfit',sans-serif;font-size:clamp(18px,1.9vw,22px);color:var(--forest)">What happens after handover?<span style="color:var(--grass)">+</span></summary>
+        <p style="margin:14px 0 0;max-width:52ch;font-size:16.5px;line-height:1.6;color:rgba(27,43,34,.72)">We walk you through monitoring your output, register your warranties, and stay on the end of the phone for maintenance and advice.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="position:relative;background:var(--forest);padding:clamp(70px,11vw,150px) clamp(16px,4vw,56px) clamp(50px,6vw,80px);overflow:hidden">
+  <div data-par="0.18" style="position:absolute;right:-8%;top:-10%;width:min(52vw,620px);height:min(52vw,620px);border-radius:50%;background:radial-gradient(circle,rgba(203,242,76,.16),transparent 66%)"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;display:grid;gap:clamp(34px,5vw,70px);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h2 data-reveal="up" style="margin:0;font-family:'Area Inktrap','Outfit',sans-serif;font-weight:300;font-size:clamp(36px,5.4vw,82px);line-height:.98;letter-spacing:-.035em;color:var(--lime);max-width:13ch">Start with a conversation</h2>
+      <p data-reveal="up" data-delay="90" style="margin:0;max-width:42ch;font-size:17px;line-height:1.6;color:rgba(237,237,226,.8)">Tell us about the property and what you're trying to fix. We'll tell you honestly whether renewables are the right next step.</p>
+      <div data-reveal="up" data-delay="150" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));font-size:15px;line-height:1.55;color:rgba(237,237,226,.74)">
+        <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Call</span><a href="tel:01383257022" style="font-family:'Area Inktrap','Outfit',sans-serif;font-size:22px;color:var(--cream)" style-hover="color:var(--lime)">01383 257022</a></div>
+        <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Email</span><a href="mailto:customerservice@sk-energy.co.uk" style="color:var(--cream);word-break:break-word" style-hover="color:var(--lime)">customerservice@sk-energy.co.uk</a></div>
+        <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">Fife office</span><span>Suite 2, Abtel Building, Pitreavie Business Park, Pitreavie Drive, Dunfermline, KY11 8US</span></div>
+        <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)">York office</span><span>Tower Court Business Centre, Oakdale Road, Clifton Moor, York, YO30 4XL</span></div>
+      </div>
+    </div>
+    <form data-reveal="up" data-delay="110" onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:14px;padding:clamp(22px,3vw,34px);border-radius:18px;background:var(--forest2);border:1px solid rgba(203,242,76,.2)">
+      <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)">Name
+        <input type="text" placeholder="Your name" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(237,237,226,.2);background:rgba(237,237,226,.05);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none" />
+      </label>
+      <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)">Email
+        <input type="email" placeholder="you@example.com" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(237,237,226,.2);background:rgba(237,237,226,.05);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none" />
+      </label>
+      <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)">What are you interested in?
+        <select style="padding:14px 16px;border-radius:10px;border:1px solid rgba(237,237,226,.2);background:rgba(237,237,226,.05);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none">
+          <option>Solar PV</option>
+          <option>Battery Storage</option>
+          <option>Heat Pumps</option>
+          <option>EV Chargers</option>
+          <option>Underfloor Heating</option>
+        </select>
+      </label>
+      <label style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)">Message
+        <textarea rows="3" placeholder="Property type, rough timescale, anything else" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(237,237,226,.2);background:rgba(237,237,226,.05);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;letter-spacing:normal;text-transform:none;resize:vertical"></textarea>
+      </label>
+      <button type="submit" style="margin-top:6px;padding:16px 22px;border:none;border-radius:999px;background:var(--lime);color:var(--forest);font-family:'Area Inktrap','Outfit',sans-serif;font-size:16px;font-weight:500;cursor:pointer" style-hover="background:#dcf77f">Book a free consultation</button>
+      <span style="font-size:13px;color:rgba(237,237,226,.5)">No obligation. We reply within one working day.</span>
+    </form>
+  </div>
+  </section>
+
+<dc-import name="SK Footer" hint-size="100%,560px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Full immersive&quot;,&quot;Subtle&quot;,&quot;Off&quot;],&quot;default&quot;:&quot;Full immersive&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;stagger&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:2.5,&quot;step&quot;:0.1,&quot;default&quot;:1,&quot;unit&quot;:&quot;×&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#cbf24c&quot;,&quot;#a9d167&quot;,&quot;#d9e8b4&quot;,&quot;#8fd07a&quot;],&quot;default&quot;:&quot;#cbf24c&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Palette&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    if (this.props.accent) document.documentElement.style.setProperty('--lime', this.props.accent);
+    const level = this.props.motion ?? 'Full immersive';
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (level === 'Off' || reduced) return;
+    const amt = level === 'Subtle' ? 0.45 : 1;
+    this._amt = amt;
+    const boot = () => { if (window.SKMotion) this._off = window.SKMotion.init({ amt, par: false }); else setTimeout(boot, 40); }; boot();
+    this._onScroll = () => {
+      if (this._q) return;
+      this._q = true;
+      requestAnimationFrame(() => { this._q = false; this.tick(amt); });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this.tick(amt);
+  }
+
+  componentWillUnmount() {
+    if (this._off) this._off();
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+  }
+
+  hidden(el, kind, amt) {
+    el.style.willChange = 'opacity, transform';
+    el.style.transition = 'opacity .85s cubic-bezier(.2,.7,.2,1), transform 1.05s cubic-bezier(.2,.7,.2,1)';
+    el.style.opacity = '0';
+    el.style.transform = kind === 'left' ? 'translateX(' + (-38 * amt) + 'px)'
+      : kind === 'right' ? 'translateX(' + (38 * amt) + 'px)'
+      : kind === 'scale' ? 'scale(' + (1 - 0.05 * amt) + ')'
+      : 'translateY(' + (46 * amt) + 'px)';
+  }
+
+  setup(amt) {
+    const stag = this.props.stagger ?? 1;
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting && !(e.boundingClientRect.bottom < 0)) return;
+        const el = e.target;
+        const d = (+(el.getAttribute('data-delay') || 0)) * stag;
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, d);
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      const r = el.getBoundingClientRect();
+      const onscreen = r.top < window.innerHeight * 0.9;
+      this.hidden(el, el.getAttribute('data-reveal'), amt);
+      if (onscreen) {
+        const d = (+(el.getAttribute('data-delay') || 0)) * stag + 120;
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, d);
+      } else io.observe(el);
+    });
+
+    const cio = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { this.count(e.target); cio.unobserve(e.target); } });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+  }
+
+  count(el) {
+    const to = parseFloat(el.getAttribute('data-count'));
+    if (!isFinite(to)) return;
+    const dur = 1500, t0 = performance.now();
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = String(Math.round(to * e));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  tick(amt) {
+    const vh = window.innerHeight;
+    document.querySelectorAll('[data-par]').forEach(el => {
+      const r = el.getBoundingClientRect();
+      const c = (r.top + r.height / 2 - vh / 2) / vh;
+      const k = parseFloat(el.getAttribute('data-par')) || 0;
+      el.style.transform = 'translate3d(0,' + (-c * k * 150 * amt).toFixed(1) + 'px,0)';
+    });
+
+    const pin = document.getElementById('sk-hero-pin');
+    if (pin && pin.parentElement) {
+      const r = pin.parentElement.getBoundingClientRect();
+      const span = Math.max(1, r.height - vh);
+      const p = Math.min(1, Math.max(0, -r.top / span));
+      const N = 5;
+      const raw = p * N;
+      const idx = Math.min(N - 1, Math.floor(raw * 0.999));
+      const local = Math.min(1, Math.max(0, raw - idx));
+      if (idx !== this._hp) {
+        this._hp = idx;
+        for (let k = 0; k < N; k++) {
+          const el = pin.querySelector('[data-hp="' + k + '"]');
+          const dot = pin.querySelector('[data-hdot="' + k + '"]');
+          const on = k === idx;
+          if (el) {
+            el.style.opacity = on ? '1' : '0';
+            el.style.pointerEvents = on ? 'auto' : 'none';
+          }
+          if (dot) {
+            dot.style.width = on ? '26px' : '10px';
+            dot.style.background = on ? 'var(--lime)' : (idx === 4 ? 'rgba(237,237,226,.3)' : 'rgba(237,237,226,.35)');
+          }
+        }
+        const rail = document.getElementById('sk-hero-rail');
+        if (rail) rail.style.opacity = idx === N - 1 ? '0' : '1';
+        const sc0 = document.getElementById('sk-scroll');
+        if (sc0) sc0.style.opacity = idx === N - 1 ? '0' : '1';
+      }
+      for (let k = 0; k < N; k++) {
+        const par = pin.querySelector('[data-hpar="' + k + '"]');
+        const con = pin.querySelector('[data-hpc="' + k + '"]');
+        const act = k === idx;
+        const t = act ? local : 0;
+        if (par) par.style.transform = 'translate3d(0,' + (-t * 42 * amt).toFixed(1) + 'px,0) scale(' + (1 + t * 0.05 * amt).toFixed(3) + ')';
+        if (con) {
+          const shift = k === N - 1 ? (act ? (1 - t) * 20 : 20) : (act ? (1 - t) * 26 - t * 18 : 26);
+          con.style.transform = 'translate3d(0,' + (shift * amt).toFixed(1) + 'px,0)';
+          con.style.opacity = act ? (k === N - 1 ? '1' : String(Math.min(1, Math.max(0, (1 - t) / 0.16)))) : '0';
+          con.style.transition = 'opacity .5s ease';
+        }
+      }
+    }
+
+    const st = document.getElementById('stages');
+    if (st) {
+      const r = st.getBoundingClientRect();
+      const span = Math.max(1, r.height - vh);
+      const p = Math.min(1, Math.max(0, -r.top / span));
+      const n = 3;
+      const idx = Math.min(n - 1, Math.max(0, Math.floor(p * n * 0.999)));
+      if (idx !== this._stage) {
+        this._stage = idx;
+        for (let k = 0; k < n; k++) {
+          const pan = st.querySelector('[data-stage-panel="' + k + '"]');
+          const img = st.querySelector('[data-stage-img="' + k + '"]');
+          const dot = st.querySelector('[data-stage-dot="' + k + '"]');
+          const on = k === idx;
+          if (pan) { pan.style.opacity = on ? '1' : '0'; pan.style.transform = on ? 'none' : 'translateY(' + (k < idx ? -24 : 24) + 'px)'; }
+          if (img) { img.style.opacity = on ? '1' : '0'; img.style.transform = on ? 'none' : 'scale(1.05)'; }
+          if (dot) { dot.style.width = on ? '28px' : '8px'; dot.style.background = on ? 'var(--grass)' : 'rgba(27,43,34,.2)'; }
+        }
+        const num = document.getElementById('sk-stage-num');
+        if (num) num.textContent = '0' + (idx + 1);
+      }
+    }
+
+    const track = document.getElementById('sk-htrack');
+    const cases = document.getElementById('cases');
+    if (track && cases && window.innerWidth < 760) {
+      const pinEl = cases.firstElementChild;
+      cases.style.height = 'auto';
+      pinEl.style.position = 'relative'; pinEl.style.height = 'auto'; pinEl.style.padding = '72px 0 48px';
+      track.parentElement.style.overflowX = 'auto'; track.parentElement.style.scrollSnapType = 'x mandatory';
+      track.style.transform = 'none'; track.style.height = 'auto';
+      Array.from(track.children).forEach(c => { c.style.scrollSnapAlign = 'start'; c.style.height = 'auto'; });
+    } else if (track && cases) {
+      const pinEl = cases.firstElementChild;
+      cases.style.height = '320vh'; pinEl.style.position = 'sticky'; pinEl.style.height = '100vh'; pinEl.style.padding = '';
+      track.style.height = '100%';
+      Array.from(track.children).forEach(c => { c.style.height = '100%'; });
+      const r = cases.getBoundingClientRect();
+      const span = Math.max(1, r.height - vh);
+      const p = Math.min(1, Math.max(0, -r.top / span));
+      const viewer = track.parentElement;
+      const dist = Math.max(0, track.scrollWidth - viewer.clientWidth);
+      viewer.style.overflowX = 'hidden';
+      track.style.transform = 'translate3d(' + (-dist * p).toFixed(1) + 'px,0,0)';
+    }
+
+    const bar = document.getElementById('sk-prog');
+    if (bar && bar.parentElement) {
+      const r = bar.parentElement.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (vh * 0.68 - r.top) / Math.max(1, r.height)));
+      bar.style.height = (p * 100).toFixed(1) + '%';
+      bar.style.transition = 'height .15s linear';
+    }
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el.style.opacity === '0' && el.getBoundingClientRect().bottom < 0) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }
+    });
+
+    const nav = document.getElementById('sk-nav');
+    if (nav) {
+      const on = window.scrollY > vh * 0.5;
+      nav.style.background = on ? 'rgba(27,43,34,.9)' : 'transparent';
+      nav.style.backdropFilter = on ? 'saturate(1.2) blur(12px)' : 'none';
+      nav.style.borderBottomColor = on ? 'rgba(203,242,76,.18)' : 'transparent';
+    }
+  }
+
+  renderVals() {
+    return { onSubmit: e => { e.preventDefault(); } };
+  }
+}
+</script>
+</body>
+</html>
